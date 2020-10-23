@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+a, button {
+    transition: all .3s ease-in-out 
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    --aditional-text: #6e798c;
+    --main-text: #007ae9;
+    --body-text: #374a59;
+
+    font: 400 1.4rem 'Open Sans', sans-serif;
+    background-color: #eee;
+}
+
+.container {
+    max-width: 1140px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    --columns: 3;
+    width: calc(100% / var(--columns) - 15px * 2);
+    margin: 15px;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    background-color: #fff;
+    font-size: 1.3rem;
+}
+
+.card__img {
+    position: relative;
+    padding-top: 53%; /* считается от ширины */
+    overflow: hidden;
+}
+
+.card__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.card__content {
+    padding: 1.5rem 2.5rem;
+
+}
+
+.card__head,
+.card__foot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+.card__head {
+    color: var(--aditional-text);
+}
+
+.card__category {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: inherit;
+}
+
+.card__category:hover,
+.card__category:focus,
+.card__category:active {
+    color: var(--main-text);
+}
+
+.card__title {
+    font: 2rem 'DM Serif Display', serif;
+    line-height: 1.25;
+    margin: 0.5em 0 .25em;
+    max-height: 2.5em;
+    overflow: hidden;
+}
+
+.card__text {
+    color: var(--body-text);
+    line-height: 1.5;
+    max-height: 5.8em;
+    overflow: hidden;
+}
+
+.card__foot {
+    color: var(--main-text);
+    margin-top: 15px;
+    align-items: center;
+}
+
+.card__read-more {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card__read-more:hover,
+.card__read-more:focus, 
+.card__read-more:active {
+    color: var(--aditional-text);
+}
+
+.author {
+    color: inherit;
+    text-decoration: none;
+}
+
+.author:hover,
+.author:focus,
+.author:active {
+    color: var(--aditional-text);
+}
+
+.author__img {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.author__img img {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.author__name {
+    vertical-align: middle;
+    font-weight: 700;
+}
