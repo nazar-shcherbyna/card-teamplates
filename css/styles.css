@@ -33,13 +33,33 @@ body {
 }
 
 .card {
-    --columns: 3;
-    width: calc(100% / var(--columns) - 15px * 2);
-    margin: 15px;
+    height: 100%;
     border-radius: 1.6rem;
     overflow: hidden;
     background-color: #fff;
     font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card--lg {
+    --columns: 1;
+    flex-direction: row;
+    font-size: 1.8rem;
+}
+
+.card--sm {
+    flex-direction: row;
+}
+
+.card--lg .card__img {
+    padding: 0;
+    padding-left: 40%;
+}
+
+.card--sm .card__img {
+    padding: 0;
+    padding-left: 32%;
 }
 
 .card__img {
@@ -56,19 +76,27 @@ body {
     width: 100%;
 }
 
-.card__content {
-    padding: 1.5rem 2.5rem;
+.card--sm .card__img img,
+.card--lg .card__img img {
+    width: auto;
+    min-width: 100%;
+    min-height: 100%;
+}
 
+.card__content {
+    padding: 1.7em 1.9em;
+    height: 100%;
 }
 
 .card__head,
 .card__foot {
     display: flex;
     justify-content: space-between;
-    font-size: 1.1rem;
+    font-size: 0.85em;
 }
 
 .card__head {
+    margin-bottom: 1em;
     color: var(--aditional-text);
 }
 
@@ -86,17 +114,29 @@ body {
 }
 
 .card__title {
-    font: 2rem 'DM Serif Display', serif;
+    font: 1.6em 'DM Serif Display', serif;
     line-height: 1.25;
-    margin: 0.5em 0 .25em;
+    margin: .5em 0 .25em;
     max-height: 2.5em;
     overflow: hidden;
+    text-decoration: none;
+    color: var(--body-text);
+}
+
+a.card__title:hover,
+a.card__title:focus,
+a.card__title:active {
+    color: var(--main-text)
+} 
+
+.card--lg .card__title {
+    font-size: 2.2em;
 }
 
 .card__text {
     color: var(--body-text);
     line-height: 1.5;
-    max-height: 5.8em;
+    height: 5.8em;
     overflow: hidden;
 }
 
@@ -129,26 +169,31 @@ body {
 }
 
 .author__img {
+    --size: 32px;
     position: relative;
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: var(--size);
+    height: var(--size);
     border-radius: 50%;
     overflow: hidden;
     vertical-align: middle;
     margin-right: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.author__img img {
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+.card--lg .author__img {
+    --size: 44px;
 }
 
 .author__name {
     vertical-align: middle;
     font-weight: 700;
 }
+
+.card--sm .card__img {
+    padding-top: 0;
+    padding-left: 32%;
+}
+
